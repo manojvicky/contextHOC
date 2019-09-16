@@ -1,8 +1,8 @@
 import React from "react";
 import {dynamicThemeContext} from "../../../context";
-import LoggerHOC from "../HOC/LoggerHOC";
-
-@LoggerHOC(dynamicThemeContext)
+import ContextHOC from "../HOC/ContextHOC";
+console.log("React", React);
+@ContextHOC(dynamicThemeContext)
 class ThemedButton extends React.Component{
     static contextType = dynamicThemeContext;
     render(){

@@ -1,6 +1,6 @@
 import React from "react";
 
-const LoggerHOC = ContextValue => {
+const ContextHOC = ContextValue => {
   return (WrappedComponent)=>{
       return class HOC extends React.Component{
         constructor(props){
@@ -8,10 +8,10 @@ const LoggerHOC = ContextValue => {
         }
         static contextType = ContextValue;
         componentDidMOunt(){
-          console.log("componentDidMOunt", WrappedComponent.name)
+          // console.log("componentDidMOunt", WrappedComponent.name)
         }
         componentDidUpdate(){
-          console.log("componentDidUpdate", WrappedComponent.name)
+          // console.log("componentDidUpdate", WrappedComponent.name)
         }
         render(){
           return <WrappedComponent className="wrappedComponent" {...this.props}/>
@@ -19,4 +19,4 @@ const LoggerHOC = ContextValue => {
       }
     }
 };
-export default LoggerHOC;
+export default ContextHOC;

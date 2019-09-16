@@ -1,8 +1,8 @@
 import React from "react";
 import {staticThemeContext} from "../../../context";
-import LoggerHOC from "../HOC/LoggerHOC";
+import ContextHOC from "../HOC/ContextHOC";
 
-@LoggerHOC(staticThemeContext)
+@ContextHOC(staticThemeContext)
 class ThemedButton extends React.Component{
     static contextType = staticThemeContext;
     state={
@@ -10,7 +10,6 @@ class ThemedButton extends React.Component{
         value: ""
     }
     render(){
-        console.log("this.context", this.context);
         return  <div className={this.props.className}>
                     <staticThemeContext.Consumer>{
                         value=><div>{value.theme}</div>
@@ -22,7 +21,6 @@ class ThemedButton extends React.Component{
                     >
                             click me
                     </button>
-                    
                 </div>
     }
 }
